@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 client=commands.Bot(command_prefix="/")
 @client.command()
-async def reply(ctx):
+async def make_quote(ctx):
     msg=ctx.message.reference
     id=msg.message_id
     message=await ctx.fetch_message(id)
