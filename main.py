@@ -44,7 +44,7 @@ async def makequote(ctx,cmd=None):
     icon=icon.crop((40,0,680,370))
     new.paste(icon)
     sa=Image.composite(new,black,haikei)
-    draw = ImageDraw.Draw(sa)# im上のImageDrawインスタンスを作る
+    draw = ImageDraw.Draw(sa)
     fnt = ImageFont.truetype('higashiume.ttf',28) 
     w2,h2=draw.textsize("a",font=fnt)
     i=(int(len(para)/2)*w2)+len(para)*5
@@ -56,7 +56,7 @@ async def makequote(ctx,cmd=None):
       else:
         w3,h3=draw.textsize(line.ljust(int(len(line)/2+5),"　"),font=fnt)
         draw.text((11*(w - w3) / 13+10, current_h+h2), line.ljust(int(len(line)/2+5),"　"), font=fnt,fill="#FFF")
-      current_h += h3 + pad#fontを指定
+      current_h += h3 + pad
     dr=ImageDraw.Draw(sa)
     font = ImageFont.truetype('nijimi.otf',15)
     authorw,authorh=dr.textsize(f"-{str(message.author)}",font=font)
